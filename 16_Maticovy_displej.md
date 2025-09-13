@@ -19,7 +19,7 @@ Zapneme první řádek a rozsvítíme jen ty LEDky, které mají v daném řádk
 ## Zapojení v přípravku
 Když se podíváme na maticový displej ve schématu naší výukové desky, vypadá to takto:
 
-Piny **R0** až **R7** znamenají **R**ow 0-7. Jsou na přípravku připojeny na P**ORTL**.
+Piny **R0** až **R7** znamenají **R**ow 0-7. Jsou na přípravku připojeny na **PORTL**.
 
 Piny **AR0** až **AR7** znamenají **A**node **R**ed 0-7. Na přípravku jsou vyvedeny na pinovou lištu, můžeme **pomocí plochých kabelů připojit k libovolným volným portům** na přípravku (např. PORTA, PORTJ, PORTB,PORTD).
 

@@ -105,9 +105,9 @@ int main()
 ## Ošetření zákmitů - debouncing
 Při stisku mechanických tlačíek zpravidla dochází k něžádoucímu jevu zákmitů, anglicky bouncing. To se projeví tak, že změna stavu z jedné do druhé úrovně neproběhne jednorázovým skokem, ale po krátkou dodu může úroveň "přeskakovat" tam a zpět. Je to způsobeno mechanickými vlastnostmi kontaktů tlačítka, má na to vliv např. síla a rychlost stisku. 
 
-![image](https://www.nuvation.com/sites/default/files/blog/Switch%20Debouncing%20for%20Electronic%20Product%20Designs/Switch_Debouncing_Circuit_Waveform.jpg)
+![image](https://fastbitlab.com/wp-content/uploads/2022/02/Figure-6-1-768x425.png)
 
-*Zdroj obrázku : https://www.nuvation.com/resources/article/switch-debouncing-electronic-product-designs*
+*Zdroj obrázku : https://fastbitlab.com/fsm-lecture-29-button-bouncing-explanation/*
 
 Tento jev nám působí problémy, protože pokud například chceme programme detekovat stisk tlačítka, jako změnu z 1 do 0, pak kvůli zákmitům můžeme namísto jednoho stisku tlačítka detekovat falešně třebba deset stisků. Proto musíme tento jev ošetřit tak, aby nám nepůsobil problémy. To lze buď hardwarově, nejčastěji připojením kondenzátoru paralelně k tlačítku. Kondenzátor způsobí, že napětí na tlačítku se bude měnit pomaleji (zaoblí se hrana). Nebo lze zákmity odfiltrovat softwarově.
 

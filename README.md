@@ -7,7 +7,7 @@ Pokud máte dotaz k materiálům či výuce, kontaktujte mě prosím na mailu [t
 
 ## Dokumentace
 
-[Datasheet procesoru ATMEGA 2560](files/Atmel-AVR-2560_datasheet.pdf)
+[Datasheet mikrokontroleru ATMEGA 2560](files/Atmel-AVR-2560_datasheet.pdf)
 
 [Schéma zapojení výukového přípravku](files/Development_board_schematics.pdf)
 

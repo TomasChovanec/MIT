@@ -52,7 +52,7 @@ Zkusme využít časovač pro blikání LEDkami. Použijeme Timer1 v režimu Nor
 int main(void)
 {
 	DDRF = 0xff; // PORTF nastavíme jako výstupní (LEDky)
-
+	TCCR1A = 0;          // Normal mode
 	TCCR1B = 0b0000011; // Prescaler 64, Normal mode
 
 	while(1)

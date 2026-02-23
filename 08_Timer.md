@@ -25,14 +25,16 @@ V našem přípravku je zdrojem hodinového signálu krystal s frekvencí 16 MHz
 
 ![image](img/08_Timer_3.png)
 
-V registru TCCR1B najdeme můžeme nastavit režim časovače (v této lekci budeme používat Normal mode a CTC mode) a nastavení prescaleru (předděličky hodinového signálu) .
 
-![image](img/08_Timer_4.png)
 
-Podle toho, jaký chceme použít režim (mode) časovače, nastavíme jednotlivé bity WGMxx. Pozn. bity  WGM11 a WGM10 v tomto cvičení nastavovat nepotřebujeme, stačí nám je nechat v defaultní hodnotě, což je 0. Pokud bychom chtěli ale zvolit další režimy, najdeme je v registru TCCR1A. 
-
+Podle toho, jaký chceme použít režim (mode) časovače, nastavíme jednotlivé bity WGMxx v registru TCCR1A a TCCR1B. 
 ![image](img/08_Timer_5.png)
 
+<img width="914" height="100" alt="image" src="https://github.com/user-attachments/assets/af334163-4c6e-4899-9697-72b99a483fc4" />
+
+V registru TCCR1B najdeme můžeme kromě režimu nastavit i  prescaler (předděličku hodinového signálu).
+
+![image](img/08_Timer_4.png)
 
 
 ## Příznakové bity

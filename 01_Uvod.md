@@ -35,6 +35,8 @@ Abyste nemuseli pro každý nový projekt opakovat kroky popsané níže, může
 
 [Template ke stažení zde](files/MIT_AVR_Project.zip)
 
+[Template ke stažení zde](https://github.com/TomasChovanec/MIT/raw/main/files/MIT_AVR_Project.zip)
+
 File ->Import -> Project Template a vyberte stažený zip. soubor. Pokud ve vaší verzi Microchip studia tato možnost v menu není, vyvolejte ji klávesovou zkratkou ```CTRL + T``` .
 
 Pokud pak kliknete na File -> New -> Project tak byste měli v nabídce vidět i "MIT AVR Project". Když ho zvolíte tak všechny níže popsané natsavení budete mít automaticky.

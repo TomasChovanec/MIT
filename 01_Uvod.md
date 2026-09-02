@@ -31,7 +31,7 @@ Kromě samotného mikrokontroleru a nutných obvodů jako napájení, zdroj hodi
 
 
 ## Template projektu
-Abyste nemuseli pro každý nový projekt opakovat kroky popsané [zde](Vytvoreni_programu.md), můžete si do Microchip studia naimportovat template (šablonu) projektu.
+Abyste nemuseli pro každý nový projekt opakovat kroky popsané [zde](Vytvoreni_projektu.md), můžete si do Microchip studia naimportovat template (šablonu) projektu.
 
 [Template ke stažení zde](https://github.com/TomasChovanec/MIT/raw/main/files/MIT_AVR_Project.zip)
 

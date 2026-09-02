@@ -44,7 +44,7 @@ Pokud pak kliknete na File -> New -> Project tak byste měli v nabídce vidět i
 
 ## Vytvoření projektu v Microchip studiu, nahrání programu
 
-Stáhněte do počítače [program pro flashování přípravku](https://github.com/TomasChovanec/MIT_uploader/blob/main/executable/MIT_uploader.zip) a rozbalte ho do ```D:/Programy/```
+Stáhněte do počítače [program pro flashování přípravku](https://github.com/TomasChovanec/MIT_uploader/raw/main/executable/MIT_uploader.zip) a rozbalte ho do ```D:/Programy/```
 
 Spusťe Microchip Studio (dříve Atmel Studio), v menu v horní liště zvolte File -> New -> Project
 

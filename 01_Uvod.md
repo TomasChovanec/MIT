@@ -33,8 +33,6 @@ Kromě samotného mikrokontroleru a nutných obvodů jako napájení, zdroj hodi
 ## Template projektu
 Abyste nemuseli pro každý nový projekt opakovat kroky popsané níže, můžete si do Microchip studia naimportovat template (šablonu) projektu.
 
-[Template ke stažení zde](files/MIT_AVR_Project.zip)
-
 [Template ke stažení zde](https://github.com/TomasChovanec/MIT/raw/main/files/MIT_AVR_Project.zip)
 
 File ->Import -> Project Template a vyberte stažený zip. soubor. Pokud ve vaší verzi Microchip studia tato možnost v menu není, vyvolejte ji klávesovou zkratkou ```CTRL + T``` .

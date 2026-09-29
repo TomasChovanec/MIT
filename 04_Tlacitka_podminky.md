@@ -105,7 +105,7 @@ int main()
 ## Ošetření zákmitů - debouncing
 Při stisku mechanických tlačíek zpravidla dochází k něžádoucímu jevu zákmitů, anglicky bouncing. To se projeví tak, že změna stavu z jedné do druhé úrovně neproběhne jednorázovým skokem, ale po krátkou dodu může úroveň "přeskakovat" tam a zpět. Je to způsobeno mechanickými vlastnostmi kontaktů tlačítka, má na to vliv např. síla a rychlost stisku. 
 
-![image](https://fastbitlab.com/wp-content/uploads/2022/02/Figure-6-1-768x425.png)
+<img width="768" height="425" alt="image" src="https://github.com/user-attachments/assets/823fb0c9-53f0-430c-aac3-f8aa56a18d62" />
 
 *Zdroj obrázku : https://fastbitlab.com/fsm-lecture-29-button-bouncing-explanation/*
 

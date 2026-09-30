@@ -142,6 +142,93 @@ int main()
 
 Pozor, výše uvedený způsob ošetření zákmitů patří k těm nejjednodušším, proto ho zde uvádím pro snadné pochopení. Nicméně hodí se jen pro velmi jednoduché programy, ve kterých nevadí, že procesor 100ms (což je pro něj celá věčnost) jen čeká na na čtení tlačítka a nic jiného nedělá. V praxi se používají různé jiné způsoby, které procesor takto neblokují. Hezký článek je například [tady (EN)](https://makeabilitylab.github.io/physcomp/arduino/debouncing.html).
 
+## Úkoly
+
+### 1. Ovládání LED tlačítkem
+Naprogramujte zařízení tak, aby:
+	• při stisknutí tlačítka SW7 svítila LED7, 
+	• po uvolnění tlačítka LED7 zhasla. 
+Použijte:
+	• PINK 
+	• PORTF 
+	• bitový posun << 
+	• bitový součin & 
+	• podmínku if. 
+Pozor: Tlačítko je při stisku v logické nule.
+
+### 2. Opačná funkce
+Upravte předchozí program tak, aby:
+	• při stisknutém SW7 byla LED7 zhasnutá, 
+	• při uvolněném SW7 byla LED7 rozsvícená. 
+Otázka
+Proč je LED rozsvícená právě tehdy, když tlačítko není stisknuté?
+
+### 3. Tlačítko ovládá jinou LED
+Naprogramujte:
+	• SW7 → LED0 
+	• SW6 → LED1 
+	• SW5 → LED2 
+	• SW4 → LED3 
+Každé tlačítko ovládá právě jednu LED.
+
+### 4. Dvě tlačítka – logický součet
+LED0 se rozsvítí, pokud je stisknuto alespoň jedno z tlačítek:
+	• SW7 
+	• SW6 
+Pokud není stisknuto ani jedno, LED zhasne.
+Úkol navíc
+Vyřešte zadání dvěma způsoby:
+	1. pomocí dvou podmínek if, 
+	2. pomocí bitových operací. 
+
+
+### 5. Dvě tlačítka – logický součin
+LED0 se rozsvítí pouze tehdy, když jsou současně stisknuta tlačítka:
+	• SW7 
+	• SW6 
+Ve všech ostatních případech LED0 zhasne.
+Doplňte pravdivostní tabulku
+SW7	SW6	LED0
+0	0	?
+0	1	?
+1	0	?
+1	1	?
+Nezapomeňte, že 0 znamená stisknuté tlačítko.
+
+### 6. Tlačítko jako přepínač
+Každým stisknutím SW7 změňte stav LED0:
+	• první stisk → LED se rozsvítí, 
+	• druhý stisk → LED zhasne, 
+	• třetí stisk → LED se rozsvítí, 
+	• ... 
+LED tedy nereaguje na to, zda je tlačítko právě stisknuté, ale na změnu jeho stavu.
+Použijte vhodné ošetření zákmitů.
+
+
+### 7. Zhasnutí jedné LED bez ovlivnění ostatních
+Na začátku svítí všechny LED.
+Po stisknutí SW7 zhasněte pouze LED3.
+Ostatní LED musí zůstat beze změny.
+Použijte:
+
+PORTF &= ...
+Otázka
+Proč bychom zde neměli použít:
+
+PORTF = ...
+
+### 8. Přepnutí jedné LED
+Po každém stisknutí SW7 změňte stav LED3:
+
+svítí → zhasne
+zhasne → svítí
+Použijte operaci XOR:
+
+PORTF ^= (1 << 3);
+Otázka
+Co přesně udělá operátor ^ s bitem, pokud na něj aplikujeme masku obsahující jedničku?
+
+
 ## Další zajímavé zdroje informací
 [Ovládání portů, debouncing](http://www.elektromys.eu/clanky/avr_porty/clanek.html)
 

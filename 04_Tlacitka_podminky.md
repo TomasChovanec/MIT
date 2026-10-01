@@ -147,19 +147,21 @@ Pozor, výše uvedený způsob ošetření zákmitů patří k těm nejjednoduš
 ### 1. Ovládání LED tlačítkem
 Naprogramujte zařízení tak, aby:
 - při stisknutí tlačítka SW7 svítila LED7, 
-- po uvolnění tlačítka LED7 zhasla. 
+- po uvolnění tlačítka LED7 zhasla.
+
 Použijte:
-- PINK 
-- PORTF 
-- bitový posun << 
-- bitový součin & 
-- podmínku if. 
+	- PINK 
+	- PORTF 
+	- bitový posun << 
+	- bitový součin & 
+	- podmínku if. 
 Pozor: Tlačítko je při stisku v logické nule.
 
 ### 2. Opačná funkce
 Upravte předchozí program tak, aby:
 - při stisknutém SW7 byla LED7 zhasnutá, 
-- při uvolněném SW7 byla LED7 rozsvícená. 
+- při uvolněném SW7 byla LED7 rozsvícená.
+
 Otázka
 Proč je LED rozsvícená právě tehdy, když tlačítko není stisknuté?
 

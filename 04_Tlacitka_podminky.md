@@ -201,15 +201,12 @@ LED0 se rozsvítí pouze tehdy, když jsou současně stisknuta tlačítka:
 Ve všech ostatních případech LED0 zhasne.
 Doplňte pravdivostní tabulku
 
-SW7	SW6	LED0
-
-0	0	?
-
-0	1	?
-
-1	0	?
-
-1	1	?
+| SW7 | SW6 | LED0 |
+| --: | --: | :--: |
+|   0 |   0 |   ?  |
+|   0 |   1 |   ?  |
+|   1 |   0 |   ?  |
+|   1 |   1 |   ?  |
 
 Nezapomeňte, že 0 znamená stisknuté tlačítko.
 

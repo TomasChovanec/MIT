@@ -5,6 +5,7 @@ V předchozích cvičeních jsme se naučili nastavit piny jako výstupní pomoc
 ## Jak funguje tlačítko
 Ze schématu přípravku můžeme zjistit, že tlačítka jsou připojena na port K. Piny portu K jsou připojeny přes relativně velký odpor (4.7kΩ) k Vcc, tedy k +5V. Pokud tlačítko není stisknuto, "naměří" procesor na pinu 5V a vyhodnotí to jako logickou jedničku. 
 Pokud ovšem tlačítko stiskneme, pin tím připojíme bez odporu přímo na zem. Procesor pak na pinu "naměří" 0V a vyhodnotí to jako logickou nulu. 
+
 ### Pull-up odpory
 Těm 4.7kΩ rezistorům se říká pull-up odpory. Jsou důležité proto, aby i v případě, že tlačítko není stisknuto, byla na pinu jasně definovaná úroveň. Bez těchto odporů by v nestisknutém stavu pin nebyl k ničemu připojen a jeho stav by byl nedefinovaný (mohl by být snadno ovlivněn jakýmkoli náhodným blízkým elektrickým polem, rušením atd.) Hodnota odporu pullup rezistoru není nijak kritická. Pouze pokud ji zvolíte moc nízkou, při stisknutí tlačítka vám poteče do země zbytečně vysoký proud.Pokud zvolíte odpor příliš vysoký, je pak klidová úroveň "slabá" tedy dokáže ji ovlivnit rušení nebo např svodový odpor vzniklý vlhkostí. Proto se obvykle používají jednotky kiloohmů.
 
@@ -150,11 +151,11 @@ Naprogramujte zařízení tak, aby:
 - po uvolnění tlačítka LED7 zhasla.
 
 Použijte:
-	- PINK 
-	- PORTF 
-	- bitový posun << 
-	- bitový součin & 
-	- podmínku if. 
+- PINK 
+- PORTF 
+- bitový posun << 
+- bitový součin & 
+- podmínku if. 
 
 Pozor: Tlačítko je při stisku v logické nule.
 
@@ -172,7 +173,8 @@ Naprogramujte:
 - SW7 → LED0 
 - SW6 → LED1 
 - SW5 → LED2 
-- SW4 → LED3 
+- SW4 → LED3
+
 Každé tlačítko ovládá právě jednu LED.
 
 ### 4. Dvě tlačítka – logický součet
@@ -185,14 +187,17 @@ Pokud není stisknuto ani jedno, LED zhasne.
 Úkol navíc
 
 Vyřešte zadání dvěma způsoby:
-	1. pomocí dvou podmínek if, 
-	2. pomocí bitových operací. 
+
+1. pomocí dvou podmínek if, 
+2. pomocí bitových operací. 
 
 
 ### 5. Dvě tlačítka – logický součin
 LED0 se rozsvítí pouze tehdy, když jsou současně stisknuta tlačítka:
 - SW7 
-- SW6 
+- SW6
+
+
 Ve všech ostatních případech LED0 zhasne.
 Doplňte pravdivostní tabulku
 
@@ -210,10 +215,10 @@ Nezapomeňte, že 0 znamená stisknuté tlačítko.
 
 ### 6. Tlačítko jako přepínač
 Každým stisknutím SW7 změňte stav LED0:
-	• první stisk → LED se rozsvítí, 
-	• druhý stisk → LED zhasne, 
-	• třetí stisk → LED se rozsvítí, 
-	• ... 
+- první stisk → LED se rozsvítí, 
+- druhý stisk → LED zhasne, 
+- třetí stisk → LED se rozsvítí, 
+- ... 
 LED tedy nereaguje na to, zda je tlačítko právě stisknuté, ale na změnu jeho stavu.
 Použijte vhodné ošetření zákmitů.
 
@@ -225,7 +230,9 @@ Ostatní LED musí zůstat beze změny.
 Použijte:
 
 PORTF &= ...
+
 Otázka
+
 Proč bychom zde neměli použít:
 
 PORTF = ...
@@ -238,7 +245,9 @@ zhasne → svítí
 Použijte operaci XOR:
 
 PORTF ^= (1 << 3);
+
 Otázka
+
 Co přesně udělá operátor ^ s bitem, pokud na něj aplikujeme masku obsahující jedničku?
 
 

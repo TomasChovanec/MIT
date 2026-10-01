@@ -146,35 +146,35 @@ Pozor, výše uvedený způsob ošetření zákmitů patří k těm nejjednoduš
 
 ### 1. Ovládání LED tlačítkem
 Naprogramujte zařízení tak, aby:
-	• při stisknutí tlačítka SW7 svítila LED7, 
-	• po uvolnění tlačítka LED7 zhasla. 
+- při stisknutí tlačítka SW7 svítila LED7, 
+- po uvolnění tlačítka LED7 zhasla. 
 Použijte:
-	• PINK 
-	• PORTF 
-	• bitový posun << 
-	• bitový součin & 
-	• podmínku if. 
+- PINK 
+- PORTF 
+- bitový posun << 
+- bitový součin & 
+- podmínku if. 
 Pozor: Tlačítko je při stisku v logické nule.
 
 ### 2. Opačná funkce
 Upravte předchozí program tak, aby:
-	• při stisknutém SW7 byla LED7 zhasnutá, 
-	• při uvolněném SW7 byla LED7 rozsvícená. 
+- při stisknutém SW7 byla LED7 zhasnutá, 
+- při uvolněném SW7 byla LED7 rozsvícená. 
 Otázka
 Proč je LED rozsvícená právě tehdy, když tlačítko není stisknuté?
 
 ### 3. Tlačítko ovládá jinou LED
 Naprogramujte:
-	• SW7 → LED0 
-	• SW6 → LED1 
-	• SW5 → LED2 
-	• SW4 → LED3 
+- SW7 → LED0 
+- SW6 → LED1 
+- SW5 → LED2 
+- SW4 → LED3 
 Každé tlačítko ovládá právě jednu LED.
 
 ### 4. Dvě tlačítka – logický součet
 LED0 se rozsvítí, pokud je stisknuto alespoň jedno z tlačítek:
-	• SW7 
-	• SW6 
+- SW7 
+- SW6 
 Pokud není stisknuto ani jedno, LED zhasne.
 Úkol navíc
 Vyřešte zadání dvěma způsoby:
@@ -184,15 +184,21 @@ Vyřešte zadání dvěma způsoby:
 
 ### 5. Dvě tlačítka – logický součin
 LED0 se rozsvítí pouze tehdy, když jsou současně stisknuta tlačítka:
-	• SW7 
-	• SW6 
+- SW7 
+- SW6 
 Ve všech ostatních případech LED0 zhasne.
 Doplňte pravdivostní tabulku
+
 SW7	SW6	LED0
+
 0	0	?
+
 0	1	?
+
 1	0	?
+
 1	1	?
+
 Nezapomeňte, že 0 znamená stisknuté tlačítko.
 
 ### 6. Tlačítko jako přepínač

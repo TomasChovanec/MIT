@@ -155,6 +155,7 @@ Použijte:
 	- bitový posun << 
 	- bitový součin & 
 	- podmínku if. 
+
 Pozor: Tlačítko je při stisku v logické nule.
 
 ### 2. Opačná funkce
@@ -163,6 +164,7 @@ Upravte předchozí program tak, aby:
 - při uvolněném SW7 byla LED7 rozsvícená.
 
 Otázka
+
 Proč je LED rozsvícená právě tehdy, když tlačítko není stisknuté?
 
 ### 3. Tlačítko ovládá jinou LED
@@ -176,9 +178,12 @@ Každé tlačítko ovládá právě jednu LED.
 ### 4. Dvě tlačítka – logický součet
 LED0 se rozsvítí, pokud je stisknuto alespoň jedno z tlačítek:
 - SW7 
-- SW6 
+- SW6
+
 Pokud není stisknuto ani jedno, LED zhasne.
+
 Úkol navíc
+
 Vyřešte zadání dvěma způsoby:
 	1. pomocí dvou podmínek if, 
 	2. pomocí bitových operací. 

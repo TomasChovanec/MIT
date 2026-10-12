@@ -89,10 +89,10 @@ int main(void)
 **4.** Upravte příklad, aby při stisku tlačítka SW0 se zobrazila na displeji nula, při stisku SW1 jednička, atd.
 
 **5.** Vytvořte program, který bude zobrazovat hodnotu od 0 do 9.
-	- Stiskem tlačítka SW0 hodnotu zvýšíte o 1.
-	- Stiskem tlačítka SW1 hodnotu snížíte o 1.
-	- Po dosažení hodnoty 9 se při dalším zvýšení přejde na 0.
-	- Po dosažení hodnoty 0 se při dalším snížení přejde na 9.
+- Stiskem tlačítka SW0 hodnotu zvýšíte o 1.
+- Stiskem tlačítka SW1 hodnotu snížíte o 1.
+- Po dosažení hodnoty 9 se při dalším zvýšení přejde na 0.
+- Po dosažení hodnoty 0 se při dalším snížení přejde na 9.
 	
 ## Další zajímavé zdroje informací
 [Sedmisegmentový displej](https://instrumentationtools.com/seven-segment-display-working-principle/)

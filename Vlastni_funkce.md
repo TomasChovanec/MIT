@@ -10,39 +10,39 @@ Hlavní výhody funkcí:
 
 Funkce mají název, mohou (ale nemusí) přijímat vstupní parametry a mohou vracet hodnotu.
 
-V prostředí **Microchip Studio** vytváříme program v jazyce C, který následně přeložíme pro mikrokontrolér ATmega2560. Program začíná vykonávat funkci `main()`. Na rozdíl od prostředí Arduino zde používáme vlastní funkci `main()` a program si sami strukturujeme.
-
 ### Funkce bez parametrů a návratové hodnoty
 
-Vytvoříme jednoduchou funkci, která rozsvítí LED připojenou k pinu PF0 výukového kitu.
+Vytvoříme jednoduchou funkci, která blikne LED číslo 0 na portu F.
 
 Klíčové slovo `void` před názvem funkce označuje, že funkce nevrací žádnou hodnotu. `void` v závorkách znamená, že funkce nepřijímá žádné vstupní parametry.
 
 ```c
+#define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define F_CPU 16000000UL
-
-void rozsvit_led(void)
+void blikni_led_0(void)
 {
-    PORTF |= (1 << PF0);
+    PORTF &= ~(1 << 0);  // Rozsvícení LED
+    _delay_ms(500);
+
+    PORTF |= (1 << 0);   // Zhasnutí LED
+    _delay_ms(500);
 }
 
 int main(void)
 {
-    // Nastavení PF0 jako výstupu
-    DDRF |= (1 << PF0);
+    // Nastavení bitu 0 portu F jako výstupu
+    DDRF |= (1 << 0);
 
     while (1)
     {
-        rozsvit_led();
-        _delay_ms(1000);
+        blikni_led_0();
     }
 }
 ```
 
-Funkci `rozsvit_led()` jsme definovali mimo funkci `main()`. V hlavním programu ji následně zavoláme příkazem `rozsvit_led();`.
+Funkci `blikni_led_0()` jsme definovali mimo funkci `main()`. V hlavním programu ji následně zavoláme příkazem `blikni_led_0();`.
 
 Všimněte si, že funkce může pracovat přímo s registry mikrokontroléru, například `PORTF`. Nemusí tedy vždy přijímat parametry.
 
@@ -53,14 +53,12 @@ Funkce může mít libovolný počet vstupních parametrů, které se zapisují 
 Upravme předchozí příklad tak, aby funkce umožňovala rozsvítit LED na libovolném bitu portu F.
 
 ```c
-#include <avr/io.h>
-#include <util/delay.h>
-
 #define F_CPU 16000000UL
+#include <avr/io.h>
 
-void nastav_led(uint8_t led)
+void rozsvit_led(uint8_t cislo_led)
 {
-    PORTF |= (1 << led);
+    PORTF &= ~(1 << cislo_led);
 }
 
 int main(void)
@@ -70,16 +68,13 @@ int main(void)
 
     while (1)
     {
-        nastav_led(0);  // Rozsvítí LED na PF0
-        _delay_ms(500);
-
-        nastav_led(3);  // Rozsvítí LED na PF3
-        _delay_ms(500);
+        rozsvit_led(0);  // Rozsvítí LED číslo 0
+        rozsvit_led(3);  // Rozsvítí LED číslo 3
     }
 }
 ```
 
-Parametr `led` je typu `uint8_t`, tedy nezáporné osmibitové číslo. Při volání funkce předáváme konkrétní hodnotu, která určuje číslo bitu portu F.
+Parametr `cislo_led` je typu `uint8_t`, tedy nezáporné osmibitové číslo. Při volání funkce předáváme konkrétní hodnotu, která určuje číslo bitu portu F.
 
 ### Návratová hodnota funkce
 
@@ -88,6 +83,7 @@ Funkce může také vracet hodnotu. Vytvořme například funkci, která spočí
 Funkce vrací hodnotu pomocí příkazu `return`, který zároveň ukončí její vykonávání. Při definici funkce musíme uvést datový typ návratové hodnoty.
 
 ```c
+#define F_CPU 16000000UL
 #include <avr/io.h>
 
 int obsah_obdelniku(int sirka, int vyska)
@@ -114,8 +110,8 @@ Funkce `obsah_obdelniku()` přijímá dva parametry typu `int` a vrací jejich s
 
 ## Úkoly
 
-1. **Blikání LED:** Vytvořte funkci `void blikej(uint8_t pocet_bliknuti)`, která bude blikat LED připojenou k PF0. Například volání `blikej(5);` způsobí pět bliknutí LED. Periodu blikání si zvolte sami. Použijte funkci `_delay_ms()`.
+1. **Blikání LED:** Vytvořte funkci `void blikej(uint8_t pocet_bliknuti)`, která bude blikat LED číslo 0 na portu F. Například volání `blikej(5);` způsobí pět bliknutí LED. Periodu blikání si zvolte sami. Použijte funkci `_delay_ms()`.
 
-2. **Ovládání LED pomocí parametru:** Vytvořte funkci `void nastav_led(uint8_t cislo_led, uint8_t stav)`, která umožní rozsvítit nebo zhasnout zvolenou LED na portu F. Parametr `stav` bude nabývat hodnot 0 nebo 1.
+2. **Ovládání LED pomocí parametru:** Vytvořte funkci `void rozsvit_led(uint8_t cislo_led)`, která umožní rozsvítit zvolenou LED na portu F. LED se rozsvítí zápisem logické nuly do příslušného bitu portu F.
 
 3. **Měření vzdálenosti:** Pro snadnější práci s ultrazvukovým senzorem vytvořte funkci `uint16_t zmer_vzdalenost(void)`, která změří vzdálenost a vrátí ji v centimetrech. Funkce bude využívat vstupní a výstupní piny mikrokontroléru a měření délky impulzu.

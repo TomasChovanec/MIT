@@ -108,10 +108,6 @@ int main(void)
 
 Funkce `obsah_obdelniku()` přijímá dva parametry typu `int` a vrací jejich součin. Návratovou hodnotu ukládáme do proměnné `obsah`.
 
-## Úkoly
+## Úkol
 
 1. **Blikání LED:** Vytvořte funkci `void blikej(uint8_t pocet_bliknuti)`, která bude blikat LED číslo 0 na portu F. Například volání `blikej(5);` způsobí pět bliknutí LED. Periodu blikání si zvolte sami. Použijte funkci `_delay_ms()`.
-
-2. **Ovládání LED pomocí parametru:** Vytvořte funkci `void rozsvit_led(uint8_t cislo_led)`, která umožní rozsvítit zvolenou LED na portu F. LED se rozsvítí zápisem logické nuly do příslušného bitu portu F.
-
-3. **Měření vzdálenosti:** Pro snadnější práci s ultrazvukovým senzorem vytvořte funkci `uint16_t zmer_vzdalenost(void)`, která změří vzdálenost a vrátí ji v centimetrech. Funkce bude využívat vstupní a výstupní piny mikrokontroléru a měření délky impulzu.

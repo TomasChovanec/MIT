@@ -104,11 +104,10 @@ int main(void)
 
 ## Úkoly
 
-**1.** Napište program, který číslo stisknuté klávesy zobrazí binárně pomocí LEDek (zapište ho do registru PORTF)
- 
-**2.** Napište program, který číslo stisknuté klávesy zobrazí na sedmisegmentovém displeji
-
-**3.** Napište program, který po stisku klávesy začne odpočítávání na sedmisegmentovém displeji. Např. pokud stisknu klávesu 6, rozběhne se na 7seg displeji odpočet od 6 do 0 po 500ms.
+1. Napište program, který číslo stisknuté klávesy zobrazí binárně pomocí LEDek (zapište ho do registru PORTF)
+1. Napište program, který při stisku klávesy 1 rozsítí pravou krajní LEDKu, při stisku 2 druhou LEDku zprava atd.
+1. Napište program, který číslo stisknuté klávesy zobrazí na sedmisegmentovém displeji
+1. Napište program, který po stisku klávesy začne odpočítávání na sedmisegmentovém displeji. Např. pokud stisknu klávesu 6, rozběhne se na 7seg displeji odpočet od 6 do 0 po 500ms.
 
 
 ### [Zpět na obsah](README.md)

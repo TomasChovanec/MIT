@@ -10,6 +10,8 @@ Hlavní výhody funkcí:
 
 Funkce mají název, mohou (ale nemusí) přijímat vstupní parametry a mohou vracet hodnotu.
 
+<img width="823" height="334" alt="image" src="https://github.com/user-attachments/assets/f9f765c7-e9fd-44e1-b380-28509e8f36d9" />
+
 ### Funkce bez parametrů a návratové hodnoty
 
 Vytvoříme jednoduchou funkci, která blikne LED číslo 0 na portu F.

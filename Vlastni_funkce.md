@@ -113,3 +113,17 @@ Funkce `obsah_obdelniku()` přijímá dva parametry typu `int` a vrací jejich s
 ## Úkol
 
 1. **Blikání LED:** Vytvořte funkci `void blikej(uint8_t pocet_bliknuti)`, která bude blikat LED číslo 0 na portu F. Například volání `blikej(5);` způsobí pět bliknutí LED. Periodu blikání si zvolte sami. Použijte funkci `_delay_ms()`.
+2. **Funkce s více parametry** Vytvořte funkci void blikej_led(uint8_t cislo_led, uint8_t pocet_bliknuti), která bliká libovolnou LED na portu F zadaným počtem bliknutí. 
+
+    Příklad volání:
+
+    ```c
+    blikej_led(2, 3);   // LED 2 třikrát blikne
+    blikej_led(5, 10);  // LED 5 desetkrát blikne
+    ```
+
+    Nápověda: Použijte cyklus for a posun 1 << cislo_led.
+
+3. **Ovládání celé skupiny LED** Vytvořte dvě funkce:
+- ```void zobraz_cislo(uint8_t hodnota)```, která zobrazí 8bitovou hodnotu na LED diodách portu F v binárním tvaru (jedna = svítí),
+- ```void zhasni_vse(void)```, která zhasne všechny LED.

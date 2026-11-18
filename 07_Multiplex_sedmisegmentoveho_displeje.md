@@ -17,59 +17,15 @@ Budeme muset použít techniku, které se říká časový multiplex. Multiplexo
 *Zdroj obrázku: By Laserlicht, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=115556518* 
 
 
-## Vliv frekvence multiplexingu na vnímání lidským okem
-Zkuste si do přípravku nahrát program níže.Je to jednoduchá ukázka časového multiplexu displeje. Potenciometrem na přípravku můžete nastavit dobu, po kterou je rozsvícena jedna pozice. Měli byste vidět, že od určité rychlosti už lidské oko přestane vidět blikání, ale zdá se mu, že všechny pozice svítí stabilně.
-
-```c
-#include <avr/io.h>
-#define F_CPU 16000000
-#include <util/delay.h>
-
-unsigned char cisla[]={0xc0,0xf9,0xA4,0xb0,0x99,0x92,0x82,0xd8,0x80,0x90,0x88,0x83,0xc6,0xA1,0x86,0x8e};
-	
-int main(void)
-{
-	DDRB = 0xff; // Nastaví port B, jako výstup (je připojen k segmentům displeje)
-	DDRD = 0xff; // Nastaví port D, jako výstup (je připojen k anodám, řídí, která číslice je aktivní)
-
-	// Nastavení AD převodníku, abychom mohli potenciometrem nastavovat rychlost displeje
-	ADMUX = 0x40;
-	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
-	ADCSRB = 0x08;
-
-	// Nekonečná smyčka	
-	while(1)
-	{
-		// Zahájí ADC konverzi
-		ADCSRA |= (1 << ADSC);
-		// Počká na dokončení konverze
-		while (ADCSRA & (1 << ADSC));
-		// Výsledek AD převodu je číslo 0-1024, my chceme nastavovat delay displeje cca od 1ms do 50ms, takže dělíme 20
-		int wait_ms = ADC/20;
-
-		for (int i=5; i>=0; i--) //
-		{
-			PORTD = ~(1<<i); // Zápisem do portu D vybereme i-tou pozici displeje
-			PORTB = cisla[i];	// Zapíše na displej i-tý prvek z pole
-
-			for (int i = 0; i <= wait_ms; i++) {
-				_delay_ms(1);  // Zavolá zpoždění 1 ms `wait_ms` krát
-			}
-		}
-	}
-}
-```
-
 ## Úkoly:
-Pozn. Neupravujte příklad výše, ale založte si nový projekt a jen si zkopírujte pole s nastavením segmentů.
 
 **1.** Napište program, který zobrazí trojciferné číslo
 
-- Nastavit vstupy/výstupy pro 7seg displej
-- Vytvořit pole s kombinacemi segmentů pro jednotlivé číslice  
-- Vytvořit pole s nastavením anod, pro aktivaci jednotlivých číslic
-- Vytvořit pole s číslem, které chceme zobrazit
-- Napsat cyklus, který vždy zapíše číslici na danou pozici a  1ms počká
+- Nastavte vstupy/výstupy pro 7seg displej
+- Vytvořte pole s kombinacemi segmentů pro jednotlivé číslice  
+- Vytvořte pole s nastavením anod, pro aktivaci jednotlivých číslic
+- Vytvořte pole s číslem, které chceme zobrazit
+- Napište cyklus, který vždy zapíše číslici na danou pozici a  1ms počká
 
 **2.** Rozšiřte program tak, aby zobrazoval šesticiferné číslo.
 

@@ -19,7 +19,8 @@ Budeme muset použít techniku, které se říká časový multiplex. Multiplexo
 
 ## Úkoly:
 
-**1.** Napište program, který zobrazí trojciferné číslo
+**1.** Napište program, který zobrazí trojciferné číslo. 
+Doporučený postup:
 
 - Nastavte vstupy/výstupy pro 7seg displej
 - Vytvořte pole s kombinacemi segmentů pro jednotlivé číslice  
